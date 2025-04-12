@@ -1,0 +1,6 @@
+{
+  "name": "@nx-mfed-mfe/ui",
+  "root": "packages/ui",
+  "sourceRoot": "packages/ui/src",
+  "projectType": "library"
+}
