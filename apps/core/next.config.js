@@ -13,18 +13,13 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  webpack(config, option) {
-    const { isServer } = option;
+  webpack(config) {
     config.plugins.push(
       // @ts-ignore
       new NextFederationPlugin({
-        name: 'host',
+        name: 'core',
         filename: 'static/chunks/remoteEntry.js',
-        remotes: {
-          core: `core@http://localhost:3001/_next/static/${
-            isServer ? 'ssr' : 'chunks'
-          }/remoteEntry.js`,
-        },
+        exposes: {},
         shared: {},
       })
     );

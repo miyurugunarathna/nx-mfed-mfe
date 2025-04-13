@@ -1,12 +1,12 @@
 {
-  "name": "@nx-mfed-mfe/host",
+  "name": "@nx-mfed-mfe/core",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "name": "host"
+    "name": "core"
   },
   "scripts": {
-    "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3000",
+    "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3001",
     "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build"
   },
   "dependencies": {
