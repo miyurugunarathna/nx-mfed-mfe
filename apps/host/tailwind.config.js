@@ -72,6 +72,18 @@ module.exports = {
         'sidebar-border': 'var(--sidebar-border)',
         'sidebar-ring': 'var(--sidebar-ring)',
       },
+      borderRadius: {
+        DEFAULT: 'var(--radius)',
+        sm: 'calc(var(--radius) * 0.75)',
+        md: 'calc(var(--radius) * 1.25)',
+        lg: 'calc(var(--radius) * 1.5)',
+        xl: 'calc(var(--radius) * 1.75)',
+        '2xl': 'calc(var(--radius) * 2)',
+        '3xl': 'calc(var(--radius) * 2.25)',
+      },
+      fontFamily: {
+        bebas: ['var(--font-bebas)'],
+      },
     },
   },
   plugins: [],
