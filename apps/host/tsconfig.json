@@ -16,8 +16,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "core/*": ["@mf-types/core/*"]
     },
     "types": ["jest", "node"],
     "outDir": "dist",

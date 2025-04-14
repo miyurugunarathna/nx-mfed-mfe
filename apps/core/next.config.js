@@ -3,6 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
+const { FederatedTypesPlugin } = require('@module-federation/typescript');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -14,13 +15,21 @@ const nextConfig = {
     svgr: false,
   },
   webpack(config) {
+    const federationConfig = {
+      name: 'core',
+      filename: 'static/chunks/remoteEntry.js',
+      exposes: {
+        './modules/header': './src/modules/header.tsx',
+      },
+      shared: {},
+    };
+
     config.plugins.push(
       // @ts-ignore
-      new NextFederationPlugin({
-        name: 'core',
-        filename: 'static/chunks/remoteEntry.js',
-        exposes: {},
-        shared: {},
+      new NextFederationPlugin(federationConfig),
+      new FederatedTypesPlugin({
+        federationConfig,
+        disableDownloadingRemoteTypes: true,
       })
     );
     return config;

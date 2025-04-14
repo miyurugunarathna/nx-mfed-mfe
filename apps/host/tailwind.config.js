@@ -14,6 +14,8 @@ module.exports = {
   content: [
     './{src,pages,components,app}/**/*.{ts,tsx,js,jsx,html}',
     '!./{src,pages,components,app}/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
+    '../core/{src,components,modules}/**/*.{ts,tsx,js,jsx,html}',
+    '!../core/{src,components,modules}/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {

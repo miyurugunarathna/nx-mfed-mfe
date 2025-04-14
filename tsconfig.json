@@ -11,6 +11,9 @@
     },
     {
       "path": "./apps/core"
+    },
+    {
+      "path": "./packages/icons"
     }
   ]
 }

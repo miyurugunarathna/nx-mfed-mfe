@@ -7,45 +7,14 @@ import {
   CarouselNext,
   CarouselPrevious,
   cn,
-  Input,
 } from '@nx-mfed-mfe/ui';
-import { Heart, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
+import Header from 'core/modules/header';
 
 export function Index() {
   return (
     <>
-      <header className="mx-auto">
-        <div className="container grid grid-cols-12 mx-auto items-center min-h-[4.5rem]">
-          <div className="col-span-2">
-            <div className="w-14 h-14">
-              <Logo />
-            </div>
-          </div>
-          <div className="col-span-7 content-center justify-items-center">
-            <nav>
-              <ul className="flex gap-6 font-medium">
-                <li>New</li>
-                <li>Men</li>
-                <li>Women</li>
-                <li>Kids</li>
-                <li>Sport</li>
-              </ul>
-            </nav>
-          </div>
-          <div className="col-span-3">
-            <div className="flex gap-2">
-              <Input type="search" name="search" placeholder="Search" />
-              <Button variant="secondary" size="icon">
-                <Heart />
-              </Button>
-              <Button variant="secondary" size="icon">
-                <ShoppingBag />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
       <div className="mx-auto">
         <div className="container bg-slate-10 mx-auto aspect-[16/7]">
           <Banners />
@@ -110,7 +79,9 @@ function Banners() {
             <img src={banner.image} alt="banner" className="w-full h-full" />
             <div className="absolute bottom-0 w-full text-center text-background bg-gradient-to-t from-black py-20 px-6 flex flex-col gap-8 items-center">
               <div className="flex flex-col items-center gap-2 max-w-2xl">
-                <h1 className="text-6xl font-bold font-bebas">{banner.title}</h1>
+                <h1 className="text-6xl font-bold font-bebas">
+                  {banner.title}
+                </h1>
                 <h6 className="text-lg opacity-80 font-light">
                   {banner.tagline}
                 </h6>
@@ -236,14 +207,14 @@ function Footer() {
       <div className="max-w-3xl mx-auto w-full">
         <div className="grid grid-cols-4 gap-4">
           {categories.map((category, index) => (
-            <div key={index} className='flex flex-col gap-6'>
-              <h4 className='text-xl'>{category.title}</h4>
+            <div key={index} className="flex flex-col gap-6">
+              <h4 className="text-xl">{category.title}</h4>
               <ul>
                 {category.links.map((link, i) => (
                   <li key={i}>
                     <Link
                       href={link.url}
-                      className={cn(buttonVariants({ variant: 'link' }), "p-0")}
+                      className={cn(buttonVariants({ variant: 'link' }), 'p-0')}
                     >
                       {link.label}
                     </Link>

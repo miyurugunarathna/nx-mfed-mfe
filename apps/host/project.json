@@ -1,10 +1,4 @@
 {
-  "targets": {
-    "build": {
-      "executor": "@nx/web:webpack",
-      "options": {
-        "postcssConfig": "apps/host/postcss.config.js"
-      }
-    }
-  }
+  "name": "@nx-mfed-mfe/host",
+  "root": "apps/host"
 }
